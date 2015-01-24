@@ -17,22 +17,12 @@ test: &test
   pool: 5
   timeout: 5000
 
-# staging:
-#   encoding: utf8
-#   username: hayao_staging
-#   password: qweQWE123
-#   host: dashboard-staging.cspoltfevfgg.us-east-1.rds.amazonaws.com
-#   adapter: mysql2
-#   database: teslacoil_staging
-#   pool: 5
-#   timeout: 5000
-
 production:
   encoding: utf8
-  username: b0d92b5079d8d7
-  password: 2bc0c24c
+  username: b11ff1bc9fe3eb
+  password: e61834a2
   host: us-cdbr-iron-east-01.cleardb.net
   adapter: mysql2
-  database: heroku_69576083c26d53d
+  database: heroku_434dddaa2ba8629?
   pool: 5
   timeout: 5000
