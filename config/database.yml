@@ -1,0 +1,38 @@
+development:
+  encoding: utf8
+  username: root
+  adapter: mysql2
+  database: kinetic
+  pool: 5
+  timeout: 5000
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  encoding: utf8
+  username: root
+  adapter: mysql2
+  database: kinetic_test
+  pool: 5
+  timeout: 5000
+
+# staging:
+#   encoding: utf8
+#   username: hayao_staging
+#   password: qweQWE123
+#   host: dashboard-staging.cspoltfevfgg.us-east-1.rds.amazonaws.com
+#   adapter: mysql2
+#   database: teslacoil_staging
+#   pool: 5
+#   timeout: 5000
+
+production:
+  encoding: utf8
+  username: b0d92b5079d8d7
+  password: 2bc0c24c
+  host: us-cdbr-iron-east-01.cleardb.net
+  adapter: mysql2
+  database: heroku_69576083c26d53d
+  pool: 5
+  timeout: 5000
