@@ -91,8 +91,12 @@ module Api
 
       # Use callbacks to share common setup or constraints between actions.
       def set_resource(resource = nil)
-        resource ||= resource_class.find(params[:id])
-        instance_variable_set("@#{resource_name}", resource)
+        begin
+          resource ||= resource_class.find(params[:id])
+          instance_variable_set("@#{resource_name}", resource)
+        rescue
+          render json: "#{resource_class} not found"
+        end
       end
   end
 end
