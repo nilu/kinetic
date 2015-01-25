@@ -9,7 +9,7 @@ module Api
       set_resource(resource_class.new(resource_params))
 
       if get_resource.save
-        render :show, status: :created
+        render json: get_resource
       else
         render json: get_resource.errors, status: :unprocessable_entity
       end
@@ -18,7 +18,7 @@ module Api
     # DELETE /api/{plural_resource_name}/1
     def destroy
       get_resource.destroy
-      head :no_content
+      render json: :success
     end
 
     # GET /api/{plural_resource_name}
@@ -40,11 +40,11 @@ module Api
     # PATCH/PUT /api/{plural_resource_name}/1
     def update
       if get_resource.update(resource_params)
-        render :show
+        render json: get_resource
       else
         render json: get_resource.errors, status: :unprocessable_entity
       end
-end
+    end
 
     private
 

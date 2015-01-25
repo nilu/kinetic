@@ -8,12 +8,6 @@ class ContactsController < ApplicationController
     redirect_to root_path
   end
 
-  def update
-  end
-
-  def delete
-  end
-
   private
 
   def contact_params

@@ -1,0 +1,19 @@
+<h1>Address Book</h1>
+
+<h4>Add New Contact by Email</h4>
+  <%= form_for(Contact.create, url: '/contacts', method: :post) do |f| %>
+    <%= f.email_field :email, autofocus: true, placeholder: 'Email' %>
+    <%= f.hidden_field :user_id, value: current_user.id %> 
+    <%= f.submit 'Submit' %>
+  <% end %>
+<h2> Contacts </h2>
+
+<% if !current_user.contacts.present? %>
+  <p>You currently have no contacts. You should try adding one from above!</p>
+<% else %>
+  <ul>
+    <% current_user.contacts.each do |contact| %>
+      <li><%= contact.email %></li>
+    <% end %>
+  </ul>
+<% end %>

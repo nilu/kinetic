@@ -1,15 +1,14 @@
 module Api
   class ContactsController < Api::BaseController
 
-    private
-
-      def contact_params
-        params.permit(:email)
+    def index
+      user = User.find_by_id(params[:user_id])
+      if user.nil?
+        render :json => { :error => "User with id #{params[:user_id]} does not exist" }
+      else
+        render :json => user.contacts
       end
-
-      def query_params
-        params.permit(:email)
-      end
+    end
 
   end
 end
