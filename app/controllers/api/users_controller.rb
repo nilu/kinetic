@@ -1,17 +1,14 @@
 module Api
   class UsersController < Api::BaseController
 
-    private
+    # This is a skeleton for if we would ever need to expand the User API
+    # private
 
-      def user_params
-        params.require(:contact).permit(:title)
-      end
+      # def user_params
+      # end
 
-      def query_params
-        # this assumes that an contact belongs to an artist and has an :artist_id
-        # allowing us to filter by this
-        params.permit(:name)
-      end
+      # def query_params
+      # end
 
   end
 end

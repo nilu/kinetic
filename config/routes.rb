@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'home#index'
+  
+  devise_for :users
 
   namespace :api do
-    resources :users, :contacts
+    get '/users' => 'users#index'
+    resources :contacts
   end
 end
