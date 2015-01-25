@@ -23,6 +23,6 @@ production:
   password: e61834a2
   host: us-cdbr-iron-east-01.cleardb.net
   adapter: mysql2
-  database: heroku_434dddaa2ba8629?
+  database: heroku_434dddaa2ba8629
   pool: 5
   timeout: 5000
